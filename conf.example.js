@@ -20,6 +20,9 @@ module.exports = {
   //   /(.*?).png$/
   // ],
 
+  // if we proxy multiple virtual hosts, we need to avoid caching hostnames
+  // alwaysDetectHostname: 'true',
+
   modules: {
     // Register a new oauth app on Github at
     // https://github.com/account/applications/new
