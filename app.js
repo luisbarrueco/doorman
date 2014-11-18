@@ -50,6 +50,10 @@ function userCanAccess(req) {
 }
 
 function isPublicPath(req) {
+  // we allow the OPTIONS method, since otherwise it would be impossible
+  // to do it.
+  if(req.method == 'OPTIONS') { return true; }
+
   if(!conf.publicPaths) { return false; }
 
   for(var i = 0, len = conf.publicPaths.length; i < len; i++) {
